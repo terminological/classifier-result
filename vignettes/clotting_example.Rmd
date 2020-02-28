@@ -21,14 +21,39 @@ library(standardPrintOutput)
 theme_set(standardPrintOutput::defaultFigureLayout())
 ```
 
+# standard plots
+
 ```{r}
 devtools::load_all()
 cr = ClassifierResult$fromPredictions(inr.predictions,inr.obs)
-cr$plotRoc()
-cr$plotDensity()
-cr$plotStats()
-cr$plotStats(vars(pmi_x1y1,pmi_x0y1,pmi_x1y0,pmi_x0y0,I))
-cr$plotPR()
-cr$distributionStats()
 
+cr$plotRoc() %>% 
+  standardPrintOutput::saveSixthPageFigure("~/Dropbox/classifierResult/clottingRoc")
+
+(cr$plotDensity() + standardPrintOutput::narrowAndTall()) %>%
+  standardPrintOutput::saveSixthPageFigure("~/Dropbox/classifierResult/clottingDensity")
+
+cr$plotPR() %>% 
+  standardPrintOutput::saveSixthPageFigure("~/Dropbox/classifierResult/clottingPR")
+
+```
+
+# summary plot
+
+```{r}
+(cr$plot() / cr$plotLegend() + patchwork::plot_layout(ncol=1, heights = c(1,0.1))) %>% 
+  standardPrintOutput::saveThirdPageFigure("~/Dropbox/classifierResult/clottingSummary")
+```
+
+# non standard plots
+
+TODO: investigate using PMI as cost sensitive metric 
+```{r}
+
+cr$plotStats() %>% 
+  standardPrintOutput::saveSixthPageFigure("~/Dropbox/classifierResult/clottingInfoStats")
+cr$plotStats(vars(pmi_x1y1,pmi_x0y1,pmi_x1y0,pmi_x0y0,I)) %>% 
+  standardPrintOutput::saveSixthPageFigure("~/Dropbox/classifierResult/clottingPmi")
+cr$distributionStats() %>% tidyr::pivot_longer(everything(), names_to = "statistic", values_to = value) %>%
+  standardPrintOutput::saveTable("~/Dropbox/classifierResult/clottingSummary")
 ```

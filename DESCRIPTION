@@ -16,6 +16,8 @@ LazyData: true
 Imports:
     tidyverse,
     ggplot2,
+    ggnewscale,
+    ggpubr,
     DescTools
 Remotes:
     terminological/tidy-info-stats

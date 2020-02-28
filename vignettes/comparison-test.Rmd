@@ -1,0 +1,78 @@
+---
+title: "clotting_example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clotting_example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+devtools::load_all("~/Git/tidy-info-stats/")
+devtools::load_all("~/Git/classifier-result/")
+library(standardPrintOutput)
+theme_set(standardPrintOutput::defaultFigureLayout())
+```
+
+# standard plots
+
+creating a classifier simulation
+
+
+```{r}
+devtools::load_all("~/Git/tidy-info-stats/")
+devtools::load_all("~/Git/classifier-result/")
+
+
+cd2 = ConditionalDistribution$new()
+cd2$withDistribution(KumaraswamyDistribution$new(mode=0.4,iqr=0.3),"class 1",1)
+cd2$withDistribution(MirroredKumaraswamyDistribution$new(mode=0.6,iqr=0.3),"class 2",2)
+
+cd2$plot(xmin=0,xmax=1)
+
+crSim = ClassifierResult$fromConditionalDistribution(cd2)
+crSim$setPositive("class 2")
+crSim$maxValue(accuracy)
+crSim$plotRoc()
+crSim$plotDensity()
+
+```
+
+```{r}
+devtools::load_all("~/Git/tidy-info-stats/")
+devtools::load_all("~/Git/classifier-result/")
+
+genSim = function(mode1, iqr1, mode2, iqr2, prevalence) {
+  cd2 = ConditionalDistribution$new()
+  cd2$withDistribution(KumaraswamyDistribution$new(mode=mode1,iqr=iqr1),"negative",1-prevalence)
+  cd2$withDistribution(MirroredKumaraswamyDistribution$new(mode=mode2,iqr=iqr2),"positive",prevalence)
+  crSim = ClassifierResult$fromConditionalDistribution(cd2)$setPositive("positive")
+  return(crSim)
+}
+
+tmp = genSim(mode1=0.1,iqr1=0.1,mode2=0.8,iqr2=0.3,prevalence=0.1)
+
+compare = ClassifierComparison$new()
+
+paramSets = list(
+  list(mode1=0.1,iqr1=0.1,mode2=0.8,iqr2=0.3,prevalence=0.1),
+  list(mode1=0.2,iqr1=0.2,mode2=0.6,iqr2=0.2,prevalence=0.1),
+  list(mode1=0.4,iqr1=0.1,mode2=0.6,iqr2=0.3,prevalence=0.1),
+  list(mode1=0.3,iqr1=0.05,mode2=0.9,iqr2=0.1,prevalence=0.1)
+)
+
+invisible(sapply(paramSets, function(l) {compare$withResult(parameterList = l, do.call(genSim,l))}))
+
+compare$compareDistributionStats()
+compare$plotRocs()
+
+compare$classifiers[[1]]$result$plotDensity()
+
+```
