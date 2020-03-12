@@ -27,17 +27,19 @@ result
 \itemize{
 \item \href{#method-new}{\code{BinaryClassifierResult$new()}}
 \item \href{#method-setPositive}{\code{BinaryClassifierResult$setPositive()}}
+\item \href{#method-plotLegend}{\code{BinaryClassifierResult$plotLegend()}}
+\item \href{#method-plot}{\code{BinaryClassifierResult$plot()}}
 \item \href{#method-plotRoc}{\code{BinaryClassifierResult$plotRoc()}}
 \item \href{#method-plotDensity}{\code{BinaryClassifierResult$plotDensity()}}
 \item \href{#method-plotStats}{\code{BinaryClassifierResult$plotStats()}}
 \item \href{#method-plotPR}{\code{BinaryClassifierResult$plotPR()}}
-\item \href{#method-distributionStats}{\code{BinaryClassifierResult$distributionStats()}}
 \item \href{#method-clone}{\code{BinaryClassifierResult$clone()}}
 }
 }
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="distributionStats">}\href{../../ClassifierResult/html/ClassifierResult.html#method-distributionStats}{\code{ClassifierResult::ClassifierResult$distributionStats()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="getInfoStats">}\href{../../ClassifierResult/html/ClassifierResult.html#method-getInfoStats}{\code{ClassifierResult::ClassifierResult$getInfoStats()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="maxValue">}\href{../../ClassifierResult/html/ClassifierResult.html#method-maxValue}{\code{ClassifierResult::ClassifierResult$maxValue()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="maxValues">}\href{../../ClassifierResult/html/ClassifierResult.html#method-maxValues}{\code{ClassifierResult::ClassifierResult$maxValues()}}\out{</span>}
@@ -73,10 +75,26 @@ Creates a distribution
 
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-plotLegend"></a>}}
+\subsection{Method \code{plotLegend()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotLegend()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-plot"></a>}}
+\subsection{Method \code{plot()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plot()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-plotRoc"></a>}}
 \subsection{Method \code{plotRoc()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotRoc()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotRoc(labels = TRUE)}\if{html}{\out{</div>}}
 }
 
 }
@@ -84,7 +102,7 @@ Creates a distribution
 \if{html}{\out{<a id="method-plotDensity"></a>}}
 \subsection{Method \code{plotDensity()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotDensity()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotDensity(labels = TRUE)}\if{html}{\out{</div>}}
 }
 
 }
@@ -103,15 +121,7 @@ Creates a distribution
 \if{html}{\out{<a id="method-plotPR"></a>}}
 \subsection{Method \code{plotPR()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotPR()}\if{html}{\out{</div>}}
-}
-
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-distributionStats"></a>}}
-\subsection{Method \code{distributionStats()}}{
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$distributionStats()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{BinaryClassifierResult$plotPR(labels = TRUE)}\if{html}{\out{</div>}}
 }
 
 }

@@ -2,6 +2,7 @@
 
 export()
 export(BinaryClassifierResult)
+export(ClassifierComparison)
 export(ClassifierResult)
 export(ConditionalDistribution)
 export(Distribution)

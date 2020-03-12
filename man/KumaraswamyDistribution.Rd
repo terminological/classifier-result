@@ -35,6 +35,7 @@ This is a Kumaraswamy distrbution with support from x=0..1
 \if{html}{
 \out{<details ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="Distribution" data-id="bigP">}\href{../../ClassifierResult/html/Distribution.html#method-bigP}{\code{ClassifierResult::Distribution$bigP()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="Distribution" data-id="getInverseCdf">}\href{../../ClassifierResult/html/Distribution.html#method-getInverseCdf}{\code{ClassifierResult::Distribution$getInverseCdf()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="Distribution" data-id="getPdf">}\href{../../ClassifierResult/html/Distribution.html#method-getPdf}{\code{ClassifierResult::Distribution$getPdf()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="Distribution" data-id="inverse">}\href{../../ClassifierResult/html/Distribution.html#method-inverse}{\code{ClassifierResult::Distribution$inverse()}}\out{</span>}

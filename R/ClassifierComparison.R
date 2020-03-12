@@ -47,7 +47,7 @@ ClassifierComparison = R6::R6Class("ClassifierComparison", public=list(
   compareMaxValues = function(statisticVars,...) {
     out = NULL
     for (classifier in self$classifiers) {
-      paramsDf = as.data.frame(classifier$parameters) %>% mutate(tmp_join=1)
+      paramsDf = as.data.frame(classifier$parameters, stringsAsFactors=FALSE) %>% mutate(tmp_join=1)
       valuesDf = classifier$result$maxValues(statisticVars,...) %>% mutate(tmp_join=1)
       out = out %>% bind_rows(paramsDf %>% left_join(valuesDf, by="tmp_join") %>% select(-tmp_join))
     }
@@ -57,7 +57,7 @@ ClassifierComparison = R6::R6Class("ClassifierComparison", public=list(
   compareDistributionStats = function(...) {
     out = NULL
     for (classifier in self$classifiers) {
-      paramsDf = as.data.frame(classifier$parameters) %>% mutate(tmp_join=1)
+      paramsDf = as.data.frame(classifier$parameters, stringsAsFactors=FALSE) %>% mutate(tmp_join=1)
       valuesDf = classifier$result$distributionStats(...) %>% mutate(tmp_join=1)
       out = out %>% bind_rows(paramsDf %>% left_join(valuesDf, by="tmp_join") %>% select(-tmp_join))
     }
@@ -67,7 +67,7 @@ ClassifierComparison = R6::R6Class("ClassifierComparison", public=list(
   getInfoStats = function() {
     out = NULL
     for (classifier in self$classifiers) {
-      paramsDf = as.data.frame(classifier$parameters) %>% mutate(tmp_join=1)
+      paramsDf = as.data.frame(classifier$parameters, stringsAsFactors=FALSE) %>% mutate(tmp_join=1)
       valuesDf = classifier$result$getInfoStats() %>% mutate(tmp_join=1)
       out = out %>% bind_rows(paramsDf %>% left_join(valuesDf, by="tmp_join") %>% select(-tmp_join))
     }
@@ -79,6 +79,7 @@ ClassifierComparison = R6::R6Class("ClassifierComparison", public=list(
     legend = NULL
     for (classifier in self$classifiers) {
       #TODO: Does not work for multiclass classifiers
+      #TODO: fix legends (will require splitting legend function in BinaryClassifierResult into 2 legend components)
       title = titleFromParamsFn(classifier$parameters)
       plot = classifier$result$plotRoc(labels=FALSE) + labs(title=title)
       if (is.null(legend)) legend = classifier$result$plotLegend()

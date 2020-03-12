@@ -20,6 +20,8 @@ for those functions, including a sampling function
 
 \item{\code{invCdf}}{the centile function}
 
+\item{\code{cdf}}{the distribution function}
+
 \item{\code{dots}}{the parameters of the pdf}
 }
 \if{html}{\out{</div>}}
@@ -29,6 +31,7 @@ for those functions, including a sampling function
 \itemize{
 \item \href{#method-new}{\code{Distribution$new()}}
 \item \href{#method-p}{\code{Distribution$p()}}
+\item \href{#method-bigP}{\code{Distribution$bigP()}}
 \item \href{#method-q}{\code{Distribution$q()}}
 \item \href{#method-getPdf}{\code{Distribution$getPdf()}}
 \item \href{#method-getInverseCdf}{\code{Distribution$getInverseCdf()}}
@@ -46,7 +49,7 @@ for those functions, including a sampling function
 \subsection{Method \code{new()}}{
 Creates a distribution
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Distribution$new(density, quantile, ...)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Distribution$new(density, quantile, distribution, ...)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -78,6 +81,25 @@ calculate the probability density at x
 }
 \subsection{Returns}{
 a vector of values of (p(x))
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-bigP"></a>}}
+\subsection{Method \code{bigP()}}{
+calculate the cumulative density at x
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Distribution$bigP(x)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{a vector of values of x}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a vector of values of (P(x))
 }
 }
 \if{html}{\out{<hr>}}

@@ -143,3 +143,7 @@ BinaryClassifierResult = R6::R6Class("BinaryClassifierResult", inherit=Classifie
 
 ))
 
+# TODO: split out plotting to plot.BinaryClassifierResult S3 methods
+# update annotations to use x=unit(1, "npc") positioning
+# plot dentity with MI score as annotation
+

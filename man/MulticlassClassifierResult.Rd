@@ -28,6 +28,7 @@ result
 \if{html}{
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="distributionStats">}\href{../../ClassifierResult/html/ClassifierResult.html#method-distributionStats}{\code{ClassifierResult::ClassifierResult$distributionStats()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="getInfoStats">}\href{../../ClassifierResult/html/ClassifierResult.html#method-getInfoStats}{\code{ClassifierResult::ClassifierResult$getInfoStats()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="maxValue">}\href{../../ClassifierResult/html/ClassifierResult.html#method-maxValue}{\code{ClassifierResult::ClassifierResult$maxValue()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="ClassifierResult" data-topic="ClassifierResult" data-id="maxValues">}\href{../../ClassifierResult/html/ClassifierResult.html#method-maxValues}{\code{ClassifierResult::ClassifierResult$maxValues()}}\out{</span>}

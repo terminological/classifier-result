@@ -31,6 +31,7 @@ Get a wrapper for multiple (independent) continuous distributions conditioned on
 \item \href{#method-sample}{\code{ConditionalDistribution$sample()}}
 \item \href{#method-sampleByClass}{\code{ConditionalDistribution$sampleByClass()}}
 \item \href{#method-getPdf}{\code{ConditionalDistribution$getPdf()}}
+\item \href{#method-getInverseCdf}{\code{ConditionalDistribution$getInverseCdf()}}
 \item \href{#method-plot}{\code{ConditionalDistribution$plot()}}
 \item \href{#method-theoreticalMI}{\code{ConditionalDistribution$theoreticalMI()}}
 \item \href{#method-theoreticalMean}{\code{ConditionalDistribution$theoreticalMean()}}
@@ -137,6 +138,25 @@ get the pdf of these distributions as a dataframe
 }
 \subsection{Returns}{
 a datafram containing all classes
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getInverseCdf"></a>}}
+\subsection{Method \code{getInverseCdf()}}{
+get the inverse cdf of these distributions as a dataframe
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ConditionalDistribution$getInverseCdf(resolution = 1001)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resolution}}{-  the number of points in the inverse cdf}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a dataframe containing regular samples of all classes
 }
 }
 \if{html}{\out{<hr>}}

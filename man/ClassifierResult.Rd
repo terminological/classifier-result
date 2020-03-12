@@ -15,7 +15,7 @@ result
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{data}}{- the classifier prediction probabilities and outcomes}
+\item{\code{data}}{- the classifier prediction probabilities and outcomes if from a prediction}
 
 \item{\code{classes}}{- the classes of the outcome as a vector}
 
@@ -30,6 +30,7 @@ result
 \item \href{#method-getInfoStats}{\code{ClassifierResult$getInfoStats()}}
 \item \href{#method-maxValue}{\code{ClassifierResult$maxValue()}}
 \item \href{#method-maxValues}{\code{ClassifierResult$maxValues()}}
+\item \href{#method-distributionStats}{\code{ClassifierResult$distributionStats()}}
 \item \href{#method-clone}{\code{ClassifierResult$clone()}}
 }
 }
@@ -57,7 +58,7 @@ Creates a distribution
 \if{html}{\out{<a id="method-getInfoStats"></a>}}
 \subsection{Method \code{getInfoStats()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ClassifierResult$getInfoStats()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ClassifierResult$getInfoStats(...)}\if{html}{\out{</div>}}
 }
 
 }
@@ -74,6 +75,14 @@ Creates a distribution
 \subsection{Method \code{maxValues()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ClassifierResult$maxValues(statisticVars, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-distributionStats"></a>}}
+\subsection{Method \code{distributionStats()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ClassifierResult$distributionStats(...)}\if{html}{\out{</div>}}
 }
 
 }
